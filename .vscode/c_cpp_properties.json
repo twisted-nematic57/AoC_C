@@ -1,0 +1,29 @@
+{
+	"configurations": [
+		{
+			"name": "Win64",
+			"includePath": [
+				"${workspaceFolder}/**",
+				"${env:MSYS_ROOT}\\usr\\include"
+			],
+			"defines": [
+				"_DEBUG",
+				"UNICODE",
+				"_UNICODE"
+			],
+			"windowsSdkVersion": "10.0.26100.0",
+			"compilerPath": "gcc.exe",
+			"cStandard": "c23",
+			"cppStandard": "c++17",
+			"intelliSenseMode": "windows-gcc-x64",
+			"compilerArgs": [
+				"-fdiagnostics-color=always",
+				"-std=c23",
+				"-march=native",
+				"-Ofast",
+				"-Wpedantic"
+			]
+		}
+	],
+	"version": 4
+}
