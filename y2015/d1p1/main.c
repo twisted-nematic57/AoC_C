@@ -1,5 +1,6 @@
 // AoC 2025 - Day 1 Part 1
-// Fastest recorded execution: 25 μs
+// Fastest recorded execution: 5 μs
+// TODO: impl timing for the whole program too, not just the core/meat
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/mman.h>
@@ -33,12 +34,14 @@ int main() {
 
   /// --- BEGIN TIMING ---
 
-  int currFloor = 0;
+  int16_t currFloor = 0;
   for(size_t i = 0; i < inputst.st_size; i++) {
-    switch(inputbuf[i]) {
-      case '(': currFloor++; break;
-      case ')': currFloor--;
-    }
+    /*if(inputbuf[i] == '(') { // ( means go up one floor
+      currFloor++;
+    } else { // there is only ( and ). Nothing else. No second comparison needed
+      currFloor--; // ) means go down one floor
+    }*/
+    currFloor -= -1 + (2*inputbuf[i] % 80);
 
     #ifdef ENABLE_PRINTF_DBG
     step++;
